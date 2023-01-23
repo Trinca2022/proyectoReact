@@ -11,15 +11,17 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Café</Nav.Link>
-                        <Nav.Link href="#pricing">Cafeteras</Nav.Link>
-                        <Nav.Link href="#pricing">Vajilla</Nav.Link>
-                        <Nav.Link href="#features">Accesorios</Nav.Link>
+                        <Nav.Link href="#">Café</Nav.Link>
+                        <Nav.Link href="#">Cafeteras</Nav.Link>
+                        <Nav.Link href="#">Vajilla</Nav.Link>
+                        <Nav.Link href="#">Accesorios</Nav.Link>
 
 
                     </Nav>
                     <Nav>
-                        <CartWidget />
+                        <Nav.Link href="#"> <CartWidget /></Nav.Link>
+
+
 
                     </Nav>
                 </Navbar.Collapse>
