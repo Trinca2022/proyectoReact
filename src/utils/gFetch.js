@@ -1,8 +1,8 @@
 
 let productos = [
-    { id: '1', categoria: 'Café', nombre: 'Café Colombiano', precio: 1200, foto: 'https://img.freepik.com/psd-premium/bolsa-papel-maqueta-cafe_23-2148884499.jpg?w=740' },
-    { id: '2', categoria: 'Café', nombre: 'Café Brasilero', precio: 1000, foto: 'https://img.freepik.com/psd-premium/bolsa-papel-maqueta-cafe_23-2148884499.jpg?w=740' },
-    { id: '3', categoria: 'Café', nombre: 'Café Italiano', precio: 1500, foto: 'https://img.freepik.com/psd-premium/bolsa-papel-maqueta-cafe_23-2148884499.jpg?w=740' },
+    { id: '1', categoria: 'Cafe', nombre: 'Café Colombiano', precio: 1200, foto: 'https://img.freepik.com/psd-premium/bolsa-papel-maqueta-cafe_23-2148884499.jpg?w=740' },
+    { id: '2', categoria: 'Cafe', nombre: 'Café Brasilero', precio: 1000, foto: 'https://img.freepik.com/psd-premium/bolsa-papel-maqueta-cafe_23-2148884499.jpg?w=740' },
+    { id: '3', categoria: 'Cafe', nombre: 'Café Italiano', precio: 1500, foto: 'https://img.freepik.com/psd-premium/bolsa-papel-maqueta-cafe_23-2148884499.jpg?w=740' },
     { id: '4', categoria: 'Cafeteras', nombre: 'Cafetera Italiana', precio: 10000, foto: 'https://img.freepik.com/fotos-premium/cafetera-moka-italiana-tradicional_739547-48.jpg?w=740' },
     { id: '5', categoria: 'Cafeteras', nombre: 'Cafetera Francesa', precio: 6000, foto: 'https://img.freepik.com/fotos-premium/cafetera-prensa-francesa-sobre-mesa-madera_52253-3241.jpg?w=740' },
     { id: '6', categoria: 'Vajilla', nombre: 'Taza', precio: 2000, foto: 'https://img.freepik.com/foto-gratis/taza-cafe-patron-corazon-taza-blanca-sobre-fondo-madera-vintage-tono_1258-250.jpg?w=740&t=st=1675384318~exp=1675384918~hmac=61fa93b2fedbdf2e3e22406215c2d19ee3c306684ae21b4cd38aeea587c622a6' },
