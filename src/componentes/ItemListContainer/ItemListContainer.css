@@ -1,0 +1,18 @@
+.divContainerList {
+    display: flex;
+    flex-direction: row;
+    width: 100hv;
+    flex-wrap: wrap;
+
+
+}
+
+.card {
+    width: 50%;
+}
+
+* {
+    font-family: Comspot;
+    margin: 0;
+    padding: 0;
+}
