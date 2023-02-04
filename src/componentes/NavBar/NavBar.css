@@ -1,4 +1,9 @@
 .barra {
     display: flex;
+    width: 100vw;
 
+}
+
+.botonCategoria {
+    margin: 5px
 }
