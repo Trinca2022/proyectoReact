@@ -5,6 +5,7 @@ import { gFetch } from '../../utils/gFetch'
 export const ItemDetailContainer = () => {
 
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const { idProducto } = useParams()
 
@@ -23,7 +24,27 @@ export const ItemDetailContainer = () => {
         <>
 
             <div>
-                {productos.map(producto => <div key={producto.id}>{producto.nombre}</div>)}
+                {loading ? <h2 className=''>Cargando...</h2>
+                    :
+
+                    productos.map(producto =>
+                        <div key={producto.id} className='card w-25 mt-2'>
+                            <div className='card-header'>
+                                Nombre: {producto.nombre}
+                            </div>
+                            <div className='card-body'>
+                                <img src={producto.foto} alt='foto' className="w-100" />
+                            </div>
+                            <div className='card-footer'>
+                                Precio: {producto.precio}
+                            </div>
+                            <button className="btn btn-outline-primary w-100">Añadir al carrito</button>
+
+
+
+                        </div>)}
+
+
             </div>
         </>
     )
