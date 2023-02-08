@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Item = ({ producto }) => {
     return (
+
         <div className='card w-40 mt-2' >
             <div className='card-header'>
                 {producto.nombre}
@@ -17,6 +18,7 @@ const Item = ({ producto }) => {
                 </Link>
             </div>
         </div>
+
     )
 }
 
