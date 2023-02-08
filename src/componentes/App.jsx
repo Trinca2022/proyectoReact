@@ -7,20 +7,22 @@ import { ItemDetailContainer } from './ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 
-function App(props) {
+function App() {
 
   return (
     <BrowserRouter>
       <NavBar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer />} />
-        <Route path='/ItemDetail/:idProducto' element={<ItemDetailContainer />} />
-        <Route path='/Category/:idCategory' element={<ItemListContainer />} />
+      <div>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/ItemDetail/:idProducto' element={<ItemDetailContainer />} />
+          <Route path='/Category/:idCategory' element={<ItemListContainer />} />
 
 
-        <Route path='*' element={<Navigate to='/' />} />
+          <Route path='*' element={<Navigate to='/' />} />
 
-      </Routes>
+        </Routes>
+      </div>
     </BrowserRouter>
 
   )

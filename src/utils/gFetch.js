@@ -12,11 +12,11 @@ let productos = [
     { id: '10', categoria: 'Accesorios', nombre: 'Espumador', precio: 8000, foto: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/001/180/130/products/whatsapp-image-2022-06-22-at-4-27-38-pm-11-d5790e6dc54be58ea316559355459674-640-0.jpeg' }
 ]
 
-export const gFetch = () => {
+export const gFetch = (id) => {
     return new Promise((res, rej) => {
 
         setTimeout(() => {
-            res(productos)
-        }, 2000)
+            res(id ? productos.find(producto => producto.id === id) : productos)
+        }, 1000)
     })
 }

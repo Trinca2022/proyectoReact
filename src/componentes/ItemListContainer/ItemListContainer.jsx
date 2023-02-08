@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 import { gFetch } from "../../utils/gFetch"
+import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.css'
 
 
@@ -38,9 +39,18 @@ const ItemListContainer = () => {
     console.log(idCategory)
 
     return (
-        <>
+        <div className="divContainerList">
+            {loading ? <h2>Cargando...</h2>
+                :
+                <ItemList productos={productos} />
+            }
+        </div>
+    )
+}
 
-            <div className="divContainerList" id="lista">
+export default ItemListContainer
+
+/* <div className="divContainerList" id="lista">
                 {loading ? <h2>Cargando...</h2>
                     :
 
@@ -59,9 +69,4 @@ const ItemListContainer = () => {
                         </div>
                     </div>
                     )}
-            </div>
-        </>
-    )
-}
-
-export default ItemListContainer
+            </div>*/
