@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { gFetch } from '../../utils/gFetch'
+import ItemDetail from '../ItemDetail/Itemdetail'
+
 
 export const ItemDetailContainer = () => {
-
-    const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
-
+    const [producto, setProducto] = useState({})
     const { idProducto } = useParams()
+    // console.log(idProducto)
 
-    console.log(idProducto)
     useEffect(() => {
-        gFetch()
-            .then(res => {
-                setProductos(res.filter(producto => producto.id === idProducto))
-            })
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false))
-
+        gFetch(idProducto)
+            .then(res => setProducto(res))
+            .catch(error => setProducto(error))
     }, [])
 
     return (
-        <>
+        <div>
+            <ItemDetail producto={producto} />
+        </div>
+    )
+}
 
-            <div>
-                {loading ? <h2 className=''>Cargando...</h2>
+/*export default ItemDetailContainer*/
+
+/*{loading ? <h2 className=''>Cargando...</h2>
                     :
 
                     productos.map(producto =>
@@ -42,10 +42,4 @@ export const ItemDetailContainer = () => {
 
 
 
-                        </div>)}
-
-
-            </div>
-        </>
-    )
-}
+                        </div>*/

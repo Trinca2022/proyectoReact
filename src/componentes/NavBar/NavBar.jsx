@@ -9,7 +9,7 @@ const NavBar = () => {
     return (
         <Navbar className="barra" collapseOnSelect expand="lg" bg="black" variant="dark">
 
-            <Link to='/' ><img className="w-25" src="./Imagenes/LogoDonJulio.jpg" /></Link>
+            <Link to='/' ><img className="w-25" src="../Imagenes/LogoDonJulio.jpg" /></Link>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
