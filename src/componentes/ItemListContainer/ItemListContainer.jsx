@@ -1,7 +1,6 @@
 
-import { useState } from "react"
-import { useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { gFetch } from "../../utils/gFetch"
 
 import ItemList from "../ItemList/ItemList"
@@ -11,10 +10,10 @@ import './ItemListContainer.css'
 export const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-
-
     const { idCategory } = useParams()
 
+    // Use effect sirve para ejecutar algo si y solo si, cambia alguna de las variables en el segundo parametro
+    // Si el segundo parametro es un array vacio, se ejecuta una sola vez
     useEffect(() => {
         if (idCategory) {
             gFetch()
@@ -36,8 +35,8 @@ export const ItemListContainer = () => {
         }
     }, [idCategory])
 
-    /* console.log(productos)
-     console.log(idCategory)*/
+    console.log(productos)
+    console.log(idCategory)
 
     return (
         <div className="divContainerList">
