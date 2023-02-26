@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 const ItemCount = ({ initial = 1, stock = 20, onAdd }) => {
     const [count, setCount] = useState(initial)
 
-    const handleSuma = () => {
+    const handleAdd = () => {
         if (count < stock) {
             setCount(count + 1)
         }
     }
-    const handleResta = () => {
+    const handleLess = () => {
         if (count > initial) {
             setCount(count - 1)
         }
@@ -22,7 +22,7 @@ const ItemCount = ({ initial = 1, stock = 20, onAdd }) => {
         <div className="card mt-2 w-100" >
             <div className="card-body row">
                 <div className="col">
-                    <button className="btn btn-outline-dark w-100" onClick={handleResta}> - </button>
+                    <button className="btn btn-outline-dark w-100" onClick={handleLess}> - </button>
 
                 </div>
                 <div className="col">
@@ -33,7 +33,7 @@ const ItemCount = ({ initial = 1, stock = 20, onAdd }) => {
 
                 </div>
                 <div className="col">
-                    <button className="btn btn-outline-dark w-100" onClick={handleSuma}> + </button>
+                    <button className="btn btn-outline-dark w-100" onClick={handleAdd}> + </button>
 
                 </div>
 

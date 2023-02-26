@@ -5,7 +5,7 @@ import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.css'
 
 export const ItemListContainer = () => {
-    const [productos, setProductos] = useState([])
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const { idCategory } = useParams()
 
@@ -15,7 +15,7 @@ export const ItemListContainer = () => {
         if (idCategory) {
             gFetch()
                 .then(res => {
-                    setProductos(res.filter(producto => producto.categoria === idCategory))
+                    setProducts(res.filter(product => product.category === idCategory))
                 })
                 .catch(error => console.log(error))
                 .finally(() => setLoading(false))
@@ -25,21 +25,21 @@ export const ItemListContainer = () => {
         else {
             gFetch()
                 .then(res => {
-                    setProductos(res)
+                    setProducts(res)
                 })
                 .catch(error => console.log(error))
                 .finally(() => setLoading(false))
         }
     }, [idCategory])
 
-    console.log(productos)
+    console.log(products)
     console.log(idCategory)
 
     return (
         <div className="divContainerList">
             {loading ? <h2>Cargando...</h2>
                 :
-                <ItemList productos={productos} />
+                <ItemList products={products} />
             }
         </div>
     )

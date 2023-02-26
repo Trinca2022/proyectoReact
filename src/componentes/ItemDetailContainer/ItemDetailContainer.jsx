@@ -5,18 +5,18 @@ import ItemDetail from '../ItemDetail/Itemdetail'
 
 
 export const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState({})
-    const { idProducto } = useParams()
+    const [product, setProduct] = useState({})
+    const { idProduct } = useParams()
 
     useEffect(() => {
-        gFetch(idProducto)
-            .then(res => setProducto(res))
-            .catch(error => setProducto(error))
+        gFetch(idProduct)
+            .then(res => setProduct(res))
+            .catch(error => setProduct(error))
     }, [])
 
     return (
         <div className='w-100'>
-            <ItemDetail producto={producto} />
+            <ItemDetail product={product} />
         </div>
     )
 }

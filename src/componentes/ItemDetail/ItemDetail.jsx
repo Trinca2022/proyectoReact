@@ -1,24 +1,24 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 
-const ItemDetail = ({ producto }) => {
+const ItemDetail = ({ product }) => {
 
-    const onAdd = (cant) => {
-        console.log(cant)
+    const onAdd = (quantity) => {
+        console.log(quantity)
     }
 
     return (
         <center>
             <div className='card w-40 mt-2' >
                 <div className='card-header'>
-                    {producto.nombre}
+                    {product.name}
                 </div>
                 <div className='card-body'>
-                    <img src={producto.foto} alt='foto' className="w-100" /><br />
-                    {producto.descripcion}
+                    <img src={product.photo} alt='foto' className="w-100" /><br />
+                    {product.description}
                 </div>
                 <div className='card-footer'>
-                    Precio: ${producto.precio}
+                    Precio: ${product.price}
                 </div>
                 <ItemCount onAdd={onAdd} />
             </div>
