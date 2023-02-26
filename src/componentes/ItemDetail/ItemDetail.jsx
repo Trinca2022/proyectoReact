@@ -1,11 +1,14 @@
-import React from 'react'
+import { useCartContext } from '../../context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({ product }) => {
 
-    const onAdd = (quantity) => {
-        console.log(quantity)
+    const { cartAdd, cartList } = useCartContext
+    const onAdd = (quant) => {
+        console.log(quant)
+        cartAdd({ ...product, quantity: quant })
     }
+    console.log(cartList)
 
     return (
         <center>
