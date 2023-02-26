@@ -7,7 +7,6 @@ import ItemDetail from '../ItemDetail/Itemdetail'
 export const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const { idProducto } = useParams()
-    // console.log(idProducto)
 
     useEffect(() => {
         gFetch(idProducto)
@@ -16,7 +15,7 @@ export const ItemDetailContainer = () => {
     }, [])
 
     return (
-        <div className='W-100'>
+        <div className='w-100'>
             <ItemDetail producto={producto} />
         </div>
     )

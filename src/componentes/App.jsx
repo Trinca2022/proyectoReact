@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react'
-import NavBar from './NavBar/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './ItemListContainer/ItemListContainer';
-import Bienvenida from './Bienvenida/Bienvenida';
 import { ItemDetailContainer } from './ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import NavBar from './NavBar/NavBar';
+import ItemListContainer from './ItemListContainer/ItemListContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
