@@ -22,7 +22,7 @@ const NavBar = () => {
 
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#"> <CartWidget /></Nav.Link>
+                    <NavLink to='/Cart'> <CartWidget /></NavLink>
 
 
 
