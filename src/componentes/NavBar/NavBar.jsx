@@ -8,27 +8,27 @@ import './NavBar.css'
 const NavBar = () => {
     return (
         <Navbar className="bar" collapseOnSelect expand="lg" bg="black" variant="dark">
+            <div className="bar-container">
+                <Link to='/' ><img className="w-25" src="../Imagenes/LogoDonJulio.jpg" /></Link>
 
-            <Link to='/' ><img className="w-25" src="../Imagenes/LogoDonJulio.jpg" /></Link>
-
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                    <NavLink to='/Category/Cafe' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Café</NavLink>
-                    <NavLink to='/Category/Cafeteras' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'} >Cafeteras</NavLink>
-                    <NavLink to='/Category/Vajilla' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Vajilla</NavLink>
-                    <NavLink to='/Category/Accesorios' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Accesorios</NavLink>
-
-
-                </Nav>
-                <Nav>
-                    <NavLink to='/Cart'> <CartWidget /></NavLink>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <NavLink to='/Category/Cafe' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Café</NavLink>
+                        <NavLink to='/Category/Cafeteras' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'} >Cafeteras</NavLink>
+                        <NavLink to='/Category/Vajilla' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Vajilla</NavLink>
+                        <NavLink to='/Category/Accesorios' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Accesorios</NavLink>
 
 
+                    </Nav>
+                    <Nav>
+                        <NavLink to='/Cart'> <CartWidget /></NavLink>
 
-                </Nav>
-            </Navbar.Collapse>
 
+
+                    </Nav>
+                </Navbar.Collapse>
+            </div>
         </Navbar>
     );
 }

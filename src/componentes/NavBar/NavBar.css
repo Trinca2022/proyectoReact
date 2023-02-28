@@ -1,5 +1,16 @@
 .bar {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.bar-container {
     display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
 .categoryButton {

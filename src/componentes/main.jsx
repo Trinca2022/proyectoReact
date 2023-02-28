@@ -6,11 +6,8 @@ import './index.css'
 
 initFirestore()
 
-ReactDOM.createRoot(document.getElementById('root')).render(
 
-  <App />
-
-)
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 
 
