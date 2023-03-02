@@ -1,7 +1,7 @@
-const CartWidget = () => {
+const CartWidget = ({ quantity }) => {
     return (
         <>
-            <div>🛒0</div>
+            <div>🛒{quantity}</div>
 
 
         </>

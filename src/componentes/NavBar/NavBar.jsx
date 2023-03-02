@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
@@ -6,6 +7,10 @@ import './NavBar.css'
 
 
 const NavBar = () => {
+
+    const { cartList } = useCartContext()
+
+
     return (
         <Navbar className="bar" collapseOnSelect expand="lg" bg="black" variant="dark">
             <div className="bar-container">
@@ -22,7 +27,7 @@ const NavBar = () => {
 
                     </Nav>
                     <Nav>
-                        <NavLink to='/Cart'> <CartWidget /></NavLink>
+                        <NavLink to='/Cart'> <CartWidget quantity={Object.entries(cartList).filter(([id, q]) => q > 0).map(([id, q]) => q).reduce((a, c) => a + c, 0)} /></NavLink>
 
 
 

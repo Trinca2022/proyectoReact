@@ -7,7 +7,7 @@ const ItemDetail = ({ product }) => {
 
     const onAdd = (quant) => {
         console.log(quant)
-        cartAdd({ ...product, quantity: quant })
+        cartAdd(product.id, quant)
     }
 
     console.log(cartList)

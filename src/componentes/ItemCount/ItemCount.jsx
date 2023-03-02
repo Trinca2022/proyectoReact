@@ -41,8 +41,6 @@ const ItemCount = ({ initial = 1, stock = 20, onAdd }) => {
             <div className="card-footer">
                 <button className="btn btn-outline-dark w-100" onClick={handleOnAdd}>Agregar al carrito</button>
             </div>
-
-
         </div>
     )
 }
