@@ -17,7 +17,7 @@ export const ItemListContainer = () => {
         if (idCategory) {
             const queryFilter = query(
                 queryCollections,
-                where('category', '==', 'idCategory'))
+                where('category', '==', idCategory))
             getDocs(queryFilter)
                 .then(resp => { setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))) })
                 .catch(err => console.log(err))

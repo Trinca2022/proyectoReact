@@ -4,15 +4,19 @@ import { useCartContext } from "../../context/CartContext"
 const CartContainer = () => {
     const { cartList, removeCart } = useCartContext()
     console.log(cartList)
-    const [emptyCart, setEmptyCart] = useState(true)
+    //const [emptyCart, setEmptyCart] = useState(true)
 
-    useEffect(() => {
-        if (cartList !== null) { setEmptyCart(false) }
-    }, [])
+    /*useEffect(()=>{
+        if(cartList.lenght<=0){
+            .then(() => setEmptyCart(false))
+
+        }
+    })*/
+
 
     return (
         <div>
-            {emptyCart ? <h1>Tu carrito está vacío</h1>
+            {(cartList.lenght <= 0) ? <h1>Tu carrito está vacío</h1>
                 :
                 cartList.map(product => (
                     <div key={product.id}>
