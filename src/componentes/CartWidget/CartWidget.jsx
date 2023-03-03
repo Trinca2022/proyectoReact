@@ -7,7 +7,7 @@ const CartWidget = () => {
 
     return (
         <>
-            <div>🛒{totalQuantity() !== 0 && totalQuantity()}</div>
+            <div>🛒{totalQuantity}</div>
 
 
         </>
@@ -15,3 +15,5 @@ const CartWidget = () => {
 
 }
 export default CartWidget
+
+//{totalQuantity !== 0 && totalQuantity}
