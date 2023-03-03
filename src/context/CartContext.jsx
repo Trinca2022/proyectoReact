@@ -32,7 +32,7 @@ export const CartContextProvider = ({ children }) => {
     //Importe total
     const totalPrice = () => cartList.reduce((count, product) => count += (product.price), 0)
 
-    const totalQuantity = () => cartList.reduce((count, product) => count += product.quantity, 0)
+    const totalQuantity = () => cartList.reduce((count, product) => count += (product.quantity), 0)
 
 
 

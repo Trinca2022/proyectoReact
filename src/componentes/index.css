@@ -85,6 +85,7 @@ button:focus-visible {
 }
 
 .body-container {
+  width: 100vw !important;
   height: 100vh !important;
   display: grid;
   grid-template-columns: 1fr;

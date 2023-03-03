@@ -32,10 +32,3 @@ export const ItemDetailContainer = () => {
 }
 
 
-/*gfetch DETALLE
-useEffect(() => {
-    gFetch(idProduct)
-        .then(res => setProduct(res))
-        .catch(error => setProduct(error))
-        .finally(() => setLoading(false))
-}, [])*/

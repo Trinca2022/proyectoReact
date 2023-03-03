@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+
 import { useCartContext } from "../../context/CartContext"
 
 const CartContainer = () => {
@@ -20,12 +20,12 @@ const CartContainer = () => {
                     </div>
                 ))
             }
-
+            <p>{totalPrice() !== 0 && `El precio total es: ${totalPrice()}`}</p>
             <div>{cartList.length >= 1 &&
                 <button className="btn btn-primary" onClick={removeCart}>Vaciar carrito</button>
             }
             </div>
-            <p>{totalPrice() !== 0 && `El precio total es: ${totalPrice()}`}</p>
+
 
 
 

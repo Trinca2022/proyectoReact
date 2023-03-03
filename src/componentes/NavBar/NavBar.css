@@ -5,8 +5,7 @@
 
 .bar-container {
     display: flex;
-    width: 100%;
-    max-width: 1400px;
+    width: 100vw !important;
     margin-right: auto;
     margin-left: auto;
     padding-right: 16px;
