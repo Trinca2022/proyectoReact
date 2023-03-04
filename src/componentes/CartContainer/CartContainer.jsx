@@ -15,7 +15,7 @@ const CartContainer = () => {
                 cartList.map(product => (
                     <div key={product.id}>
                         <img src={product.photo} className="w-25" />
-                        Nombre: {product.name} - Cantidad: {product.quantity} - Precio total por unidades: ${product.price}
+                        Nombre: {product.name} - Cantidad: {product.quantity} - Precio total por unidades: ${product.price * product.quantity}
                         <button className="btn btn-danger" onClick={() => removeProduct(product.id)}>x</button>
                     </div>
                 ))

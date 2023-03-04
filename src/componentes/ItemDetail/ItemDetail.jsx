@@ -3,9 +3,9 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({ product }) => {
 
-    const { cartAdd, cartList } = useCartContext()
+    const { cartAdd } = useCartContext()
 
-    const onAdd = (quant) => {
+    const onAdd = (quant,) => {
         //console.log(quant)
         cartAdd({ ...product, quantity: quant })
     }
@@ -33,3 +33,8 @@ const ItemDetail = ({ product }) => {
 }
 
 export default ItemDetail
+
+/*const onAdd = (quant, pric) => {
+        //console.log(quant)
+        cartAdd({ ...product, quantity: quant, newPrice: pric })
+    }*/
