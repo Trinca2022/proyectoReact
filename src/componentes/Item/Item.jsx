@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import React from 'react'
+import React, { memo } from 'react'
 import './Item.css'
 
-const Item = ({ product }) => {
+const Item = memo(({ product }) => {
     return (
 
         <div className='card' >
@@ -22,5 +22,5 @@ const Item = ({ product }) => {
 
     )
 }
-
+)
 export default Item

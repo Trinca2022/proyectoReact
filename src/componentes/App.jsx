@@ -13,7 +13,7 @@ const routes = [
   { route: '/Category/:idCategory', component: <ItemListContainer /> },
   { route: '/Cart', component: <CartContainer /> },
   { route: '/404Error', component: <Error /> },
-  { route: '/*', component: <Navigate to='/404Error' /> },
+  { route: '*', component: <Navigate to='/404Error' /> },
   //{ route: '/Cart', component: 'ItemListContainer' },
 ]
 
