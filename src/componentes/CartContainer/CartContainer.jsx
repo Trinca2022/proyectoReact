@@ -1,6 +1,7 @@
 
 import { useCartContext } from "../../context/CartContext"
-import { CartCards } from "../Cart/Cart"
+import { CartCards } from "../CartCards/CartCards"
+
 
 
 const CartContainer = () => {

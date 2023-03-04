@@ -17,7 +17,7 @@ const InputCount = () => {
     return (
         <>
             <p></p>
-            <p>Tu producto ha sido agregado al carrito</p>
+            <p>¡Tu producto ha sido agregado al carrito!</p>
             <Link to='/Cart' >
                 <button
                     className="btn btn-outline-dark w-100"
