@@ -11,26 +11,17 @@ export const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
     const { idCategory } = useParams()
 
+    //Traigo productos de base de datos - simplifico código
     useEffect(() => {
         const db = getFirestore()
         const queryCollections = collection(db, 'products')
-        if (idCategory) {
-            const queryFilter = query(
-                queryCollections,
-                where('category', '==', idCategory))
-            getDocs(queryFilter)
-                .then(resp => { setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))) })
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
+        const queryFilter = idCategory ? query(queryCollections, where('category', '==', idCategory)) : queryCollections
 
-        }
-        else {
-            getDocs(queryCollections)
-                .then(resp => setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
+        getDocs(queryFilter)
+            .then(resp => { setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))) })
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false))
 
-        }
     }, [idCategory])
 
     return (
@@ -44,4 +35,20 @@ export const ItemListContainer = () => {
 }
 
 export default ItemListContainer
+
+/*if (idCategory) {
+            const queryFilter = query(
+                queryCollections,
+                where('category', '==', idCategory))
+            getDocs(queryFilter)
+                .then(resp => { setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))) })
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))
+
+        }
+        else {
+            getDocs(queryCollections)
+                .then(resp => setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))))
+                .catch(err => console.log(err))
+                .finally(() => setLoading(false))*/
 

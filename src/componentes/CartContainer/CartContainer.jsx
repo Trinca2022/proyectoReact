@@ -13,12 +13,12 @@ const CartContainer = () => {
                 cartList.map(product => (
                     <div key={product.id}>
                         <img src={product.photo} className="w-25" />
-                        Nombre: {product.name} - Cantidad: {product.quantity} - Precio total por unidades: ${product.price * product.quantity}
+                        Producto: {product.name} - Cantidad: {product.quantity} - Precio total por unidades de {product.name}: ${product.price * product.quantity}
                         <button className="btn btn-danger" onClick={() => removeProduct(product.id)}>x</button>
                     </div>
                 ))
             }
-            <p>{totalPrice() !== 0 && `El precio total es: ${totalPrice()}`}</p>
+            <h3>{totalPrice() !== 0 && `Precio total a pagar: $${totalPrice()}`}</h3>
             <div>{cartList.length >= 1 &&
                 <button className="btn btn-primary" onClick={removeCart}>Vaciar carrito</button>
             }
