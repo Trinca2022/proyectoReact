@@ -24,7 +24,7 @@ const NavBar = () => {
                         {categories.map(categ => <NavLink to={`/Category/${categ.idCategory}`} className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>{categ.name}</NavLink>)
                         }
 
-                        <NavLink to='/Category/Cafe' className={({ isActive }) => isActive ? 'btn btn-primary categoryButton' : 'btn btn-outline-primary categoryButton'}>Café</NavLink>
+
 
                     </Nav>
                     <Nav>

@@ -1,8 +1,10 @@
 
 import { useCartContext } from "../../context/CartContext"
+import { CartCards } from "../Cart/Cart"
+
 
 const CartContainer = () => {
-    const { cartList, removeCart, removeProduct, totalPrice } = useCartContext()
+    const { cartList } = useCartContext()
 
 
     return (
@@ -10,27 +12,11 @@ const CartContainer = () => {
 
             {(cartList.length <= 0) ? <h1>Tu carrito está vacío</h1>
                 :
-                cartList.map(product => (
-                    <div key={product.id}>
-                        <img src={product.photo} className="w-25" />
-                        Producto: {product.name} - Cantidad: {product.quantity} - Precio total por unidades de {product.name}: ${product.price * product.quantity}
-                        <button className="btn btn-danger" onClick={() => removeProduct(product.id)}>x</button>
-                    </div>
-                ))
-            }
-            <h3>{totalPrice() !== 0 && `Precio total a pagar: $${totalPrice()}`}</h3>
-            <div>{cartList.length >= 1 &&
-                <button className="btn btn-primary" onClick={removeCart}>Vaciar carrito</button>
-            }
-            </div>
-
-
-
-
-
+                <CartCards />}
         </>
     )
 }
 
 
 export default CartContainer
+
