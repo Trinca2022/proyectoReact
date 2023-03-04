@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ItemCount = ({ initial = 1, stock = 20, onAdd }) => {
+const ItemCount = ({ initial = 1, stock = 20, onAdd, }) => {
     const [count, setCount] = useState(initial)
 
     const handleAdd = () => {
@@ -48,3 +48,15 @@ const ItemCount = ({ initial = 1, stock = 20, onAdd }) => {
 }
 
 export default ItemCount
+
+/*{Toastify({
+                text: `Café ${product.name} añadido al carrito`,
+                duration: 3000,
+                gravity: "bottom",
+                stopOnFocus: true,
+                style: {
+                    background: "white",
+                    color: "black"
+                },
+                onClick: function () { }
+            }).showToast()} */

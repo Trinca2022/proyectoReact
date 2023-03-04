@@ -3,8 +3,6 @@ import { useCartContext } from "../../context/CartContext"
 
 const CartContainer = () => {
     const { cartList, removeCart, removeProduct, totalPrice } = useCartContext()
-    //console.log(cartList)
-
 
 
     return (
@@ -36,6 +34,3 @@ const CartContainer = () => {
 
 
 export default CartContainer
-
-//<p>{cartList.length >= 1 && totalPrice() !== 0 && `El precio Total es: ${importeCompra}`}</p>
-/**/

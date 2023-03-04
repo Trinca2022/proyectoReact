@@ -5,7 +5,7 @@ const ItemDetail = ({ product }) => {
 
     const { cartAdd } = useCartContext()
 
-    const onAdd = (quant,) => {
+    const onAdd = (quant) => {
         //console.log(quant)
         cartAdd({ ...product, quantity: quant })
     }
@@ -13,7 +13,7 @@ const ItemDetail = ({ product }) => {
     //console.log(cartList)
 
     return (
-        <center>
+        <>  <center>
             <div className='card w-40 mt-2' >
                 <div className='card-header'>
                     {product.name}
@@ -29,6 +29,9 @@ const ItemDetail = ({ product }) => {
             </div>
         </center>
 
+
+
+        </>
     )
 }
 
