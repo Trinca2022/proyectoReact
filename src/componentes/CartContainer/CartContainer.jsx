@@ -1,15 +1,9 @@
-
-
 import { useCartContext } from "../../context/CartContext"
 import { CartCards } from "../CartCards/CartCards"
 import { CartForm } from "../CartForm/CartForm"
 
-
-
-
 const CartContainer = () => {
     const { cartList } = useCartContext()
-
 
     return (
         <>
@@ -23,7 +17,6 @@ const CartContainer = () => {
         </>
     )
 }
-
 
 export default CartContainer
 

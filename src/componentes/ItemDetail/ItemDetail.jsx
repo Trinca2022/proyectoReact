@@ -10,8 +10,6 @@ const ItemDetail = ({ product }) => {
         cartAdd({ ...product, quantity: quant })
     }
 
-
-
     return (
         <>  <center>
             <div className='card w-40 mt-2' >
@@ -28,9 +26,6 @@ const ItemDetail = ({ product }) => {
                 <ItemCount onAdd={onAdd} />
             </div>
         </center>
-
-
-
         </>
     )
 }
