@@ -6,11 +6,11 @@ const ItemDetail = ({ product }) => {
     const { cartAdd } = useCartContext()
 
     const onAdd = (quant) => {
-        //console.log(quant)
+
         cartAdd({ ...product, quantity: quant })
     }
 
-    //console.log(cartList)
+
 
     return (
         <>  <center>
@@ -36,8 +36,3 @@ const ItemDetail = ({ product }) => {
 }
 
 export default ItemDetail
-
-/*const onAdd = (quant, pric) => {
-        //console.log(quant)
-        cartAdd({ ...product, quantity: quant, newPrice: pric })
-    }*/

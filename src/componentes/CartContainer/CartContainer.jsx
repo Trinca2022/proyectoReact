@@ -1,6 +1,9 @@
 
+
 import { useCartContext } from "../../context/CartContext"
 import { CartCards } from "../CartCards/CartCards"
+import { CartForm } from "../CartForm/CartForm"
+
 
 
 
@@ -13,7 +16,10 @@ const CartContainer = () => {
 
             {(cartList.length <= 0) ? <h1>Tu carrito está vacío</h1>
                 :
-                <CartCards />}
+                <div><CartCards />
+                    <CartForm /></div>
+
+            }
         </>
     )
 }

@@ -35,19 +35,3 @@ export const ItemListContainer = () => {
 
 export default ItemListContainer
 
-/*if (idCategory) {
-            const queryFilter = query(
-                queryCollections,
-                where('category', '==', idCategory))
-            getDocs(queryFilter)
-                .then(resp => { setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))) })
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))
-
-        }
-        else {
-            getDocs(queryCollections)
-                .then(resp => setProducts(resp.docs.map(product => ({ id: product.id, ...product.data() }))))
-                .catch(err => console.log(err))
-                .finally(() => setLoading(false))*/
-

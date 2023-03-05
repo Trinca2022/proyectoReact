@@ -20,7 +20,6 @@ export const ItemDetailContainer = () => {
             .catch(error => setProduct(error))
             .finally(() => setLoading(false))
 
-        console.log(product)
 
     }, [])
 

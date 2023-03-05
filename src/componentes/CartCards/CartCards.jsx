@@ -25,10 +25,7 @@ export const CartCards = () => {
 
             <h3>{totalPrice() !== 0 && `Precio total a pagar: $${totalPrice()}`}</h3>
 
-            <div>{cartList.length >= 1 &&
-                <button className="btn btn-primary" onClick={removeCart}>Vaciar carrito</button>
-            }
-            </div>
+
 
         </>
     )
