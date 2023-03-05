@@ -18,7 +18,7 @@ export const CartCards = () => {
                 ))
             }
 
-            <h3>{totalPrice() !== 0 && `Precio total a pagar: $${totalPrice()}`}</h3>
+            <h3 className='totalPrice'>{totalPrice() !== 0 && `Importe total a pagar: $${totalPrice()}`}</h3>
         </>
     )
 }

@@ -1,11 +1,13 @@
+import { useEffect } from "react"
 import { useParams } from "react-router-dom"
+import Loading from "../Loading/Loading"
 
 const Purchase = () => {
     const { idOrder } = useParams()
 
-
     return (
-        <><h1>¡Gracias por tu compra!</h1>
+        <>
+            <h1>¡Gracias por tu compra!</h1>
             <h1>Tu número de orden es: {idOrder}</h1>
         </>
 

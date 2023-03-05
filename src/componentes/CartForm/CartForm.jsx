@@ -1,7 +1,9 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import './CartForm.css';
+import Loading from "../Loading/Loading";
 
 export const CartForm = () => {
 
@@ -69,12 +71,13 @@ export const CartForm = () => {
     }
 
     return (
-        <div>
+        <div className="cartForm">
             <form onSubmit={handleConfirm} >
+                <h5>Completá el formulario para finalizar la compra.</h5>
                 <input
                     type="text"
                     name="name"
-                    placeholder="Ingrese el nombre"
+                    placeholder="Ingresá el nombre"
                     onChange={handleOnChange}
                     value={formData.name}
 
@@ -82,7 +85,7 @@ export const CartForm = () => {
                 <input
                     type="text"
                     name="phone"
-                    placeholder="Ingrese el teléfono"
+                    placeholder="Ingresá el teléfono"
                     onChange={handleOnChange}
                     value={formData.phone}
 
@@ -90,7 +93,7 @@ export const CartForm = () => {
                 <input
                     type="mail"
                     name="email"
-                    placeholder="Ingrese el email"
+                    placeholder="Ingresá el email"
                     onChange={handleOnChange}
                     value={formData.email}
 
@@ -98,7 +101,7 @@ export const CartForm = () => {
                 <input
                     type="mail"
                     name="repetirEmail"
-                    placeholder="Repetir el email"
+                    placeholder="Repetí el email"
                     onChange={handleOnChange}
                     value={formData.repetirEmail}
 

@@ -1,0 +1,11 @@
+.cartForm {
+    display: flex;
+    margin: 1% 75% 1% 1%;
+    border: black 1px solid;
+    justify-content: center;
+    padding: 1%;
+}
+
+input {
+    display: flex;
+}

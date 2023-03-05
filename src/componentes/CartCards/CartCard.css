@@ -2,8 +2,6 @@
     display: flex;
     margin: 1% 35% 1% 1%;
     border: black 1px solid;
-
-
 }
 
 .imgCardCart {
@@ -17,4 +15,8 @@
 
 .buttonCardCart {
     margin-left: 10px;
+}
+
+.totalPrice {
+    margin: 1% 35% 1% 1%;
 }
