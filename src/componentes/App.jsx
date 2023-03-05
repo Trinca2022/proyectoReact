@@ -7,6 +7,7 @@ import ItemListContainer from './ItemListContainer/ItemListContainer';
 import CartContainer from './CartContainer/CartContainer';
 import Error from './Error/Error';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../index.css';
 
 const routes = [
   { route: '/', component: <ItemListContainer /> },
@@ -24,11 +25,9 @@ function App() {
     <BrowserRouter>
       <CartContextProvider>
         <NavBar />
-        <div>
-          <Routes>
-            {routes.map(rout => <Route path={`/${rout.route}`} element={rout.component} />)}
-          </Routes>
-        </div>
+        <Routes>
+          {routes.map(rout => <Route key={rout.route} path={rout.route} element={rout.component} />)}
+        </Routes>
       </CartContextProvider>
     </BrowserRouter>
 
@@ -37,10 +36,3 @@ function App() {
 
 export default App
 
-/*<Route path='/' element={<ItemListContainer />} />
-            <Route path='/ItemDetail/:idProduct' element={<ItemDetailContainer />} />
-            <Route path='/Category/:idCategory' element={<ItemListContainer />} />
-            <Route path='/Cart' element={<CartContainer />} />
-            <Route path='/404Error' element={<Error />} />
-            <Route path='*' element={<Navigate to='/404Error' />} />
-*/

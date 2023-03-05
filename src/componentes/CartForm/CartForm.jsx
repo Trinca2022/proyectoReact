@@ -1,11 +1,12 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 export const CartForm = () => {
 
-    const [idOrder, setIdOrder] = useState({})
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -13,52 +14,54 @@ export const CartForm = () => {
         repetirEmail: ''
     })
 
+    const [error, setError] = useState()
+
     const { cartList, removeCart, totalPrice } = useCartContext()
 
+    //Función que crea la orden de compra y maneja los condicionales para errores en el formulario
+    const handleConfirm = (event) => {
+        event.preventDefault()
+        const nameIsValid = formData.name.length > 0
+        const phoneIsValid = formData.phone.length > 0
+        const emailIsValid = formData.email.length > 0
+        const repetirEmailIsValid = formData.repetirEmail === formData.email
 
-
-    const addOrder = (evt) => {
-        evt.preventDefault()
+        if (!nameIsValid) {
+            alert('El nombre no puede estar vacío')
+            return false
+        }
+        if (!phoneIsValid) {
+            alert('El teléfono no puede estar vacío')
+            return false
+        }
+        if (!emailIsValid) {
+            alert('El email no puede estar vacío')
+            return false
+        }
+        if (!repetirEmailIsValid) {
+            alert('El email no coincide')
+            return false
+        }
         const order = {}
         order.buyer = formData
         order.isActive = true
         order.items = cartList.map(({ id, name, quantity }) => ({ id, name, quantity }))
         order.total = totalPrice()
 
-
         //Traigo Firestore
         const db = getFirestore()
         const ordersCollection = collection(db, 'orders')
 
-        //QUIERO CAPTAR EL ID DE LA ORDEN CUANDO SE EJECUTA
-        useEffect(() => {
-            const query = doc(db, 'orders', idOrder)
-            getDoc(query)
-                .then(resp => setIdOrder({ id: resp.id }))
-                .catch(error => setIdOrder(error))
-                .finally(() => setIdOrder(false))
-            console.log(idOrder)
-        }, [formData])
-
-
+        //Envía la orden con los datos completos a firebase
         addDoc(ordersCollection, order)
-            .then(resp => console.log(resp))
-            .catch(err => console.log(err))
-            .finally(() => {
+            .then(resp => {
                 removeCart()
-                setFormData({
-                    name: '',
-                    phone: '',
-                    email: '',
-                    repetirEmail: ''
-                })
+                navigate(`/Purchase/${resp.id}`)
             })
-
-
+            .catch(err => setError(err.toString()))
     }
 
     const handleOnChange = (evt) => {
-
         setFormData({
             ...formData,
             [evt.target.name]: evt.target.value
@@ -66,11 +69,8 @@ export const CartForm = () => {
     }
 
     return (
-
         <div>
-
-
-            <form onSubmit={addOrder} >
+            <form onSubmit={handleConfirm} >
                 <input
                     type="text"
                     name="name"
@@ -103,13 +103,13 @@ export const CartForm = () => {
                     value={formData.repetirEmail}
 
                 /><br />
+                <button className="btn btn-outline-success" type="submit">Confirmar compra</button>
 
-                <Link to={`/Purchase/${idOrder}`}> <button onClick={removeCart} className="btn btn-outline-success" type="submit">Confirmar compra</button></Link>
+                <button className="btn btn-outline-danger" onClick={removeCart}>Vaciar Carrito</button>
             </form>
-
-            <button className="btn btn-outline-danger" onClick={removeCart}>Vaciar Carrito</button>
+            {error ? <p>{error}</p>
+                : null}
         </div>
     )
 }
-
 

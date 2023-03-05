@@ -1,15 +1,10 @@
-import React from 'react'
 import { useCartContext } from '../../context/CartContext'
 
-
-
-
 export const CartCards = () => {
-    const { cartList, removeCart, removeProduct, totalPrice } = useCartContext()
+    const { cartList, removeProduct, totalPrice } = useCartContext()
 
     return (
         <>
-
             {(cartList.length <= 0) ? <h1>Tu carrito está vacío</h1>
                 :
                 cartList.map(product => (
@@ -19,14 +14,9 @@ export const CartCards = () => {
                         <button className="btn btn-danger" onClick={() => removeProduct(product.id)}>x</button>
                     </div>
                 ))
-
-
             }
 
             <h3>{totalPrice() !== 0 && `Precio total a pagar: $${totalPrice()}`}</h3>
-
-
-
         </>
     )
 }
