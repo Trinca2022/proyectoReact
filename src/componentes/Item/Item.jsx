@@ -15,7 +15,7 @@ const Item = memo(({ product }) => {
             <div className='card-footer'>
                 Precio: ${product.price}<br />
                 <Link to={`/ItemDetail/${product.id}`}>
-                    <button className="btn btn-outline-primary w-100">Ver producto</button>
+                    <button className="btn btn-outline-dark w-100">Ver producto</button>
                 </Link>
             </div>
         </div>
